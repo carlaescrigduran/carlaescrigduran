@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Katibeh&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    body {
+      box-sizing: border-box;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background: #0a0a0a;
+      color: #f5f5f5;
+    }
+
+    .portfolio-container {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    body.dark-mode header {
+      background: #0a0a0a;
+      border-bottom-color: #333333;
+    }
+
+    .logo {
+      font-family: 'Katibeh', cursive;
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ffe66d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      cursor: pointer;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    body.dark-mode .logo {
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ffe66d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    body.dark-mode nav a {
+      color: #f5f5f5;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf, #ffa07a);
+      transition: width 0.3s ease;
+    }
+
+    body.dark-mode nav a::after {
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf, #ffa07a);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    main {
+      width: 100%;
+      min-height: calc(100% - 100px);
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-section {
+      height: calc(100% - 100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .hero-section h1 {
+      font-family: 'Katibeh', cursive;
+      font-size: 5rem;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+      animation: gradientShift 3s ease infinite;
+      background-size: 200% 200%;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    body.dark-mode .hero-section h1 {
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+    }
+
+    .hero-section p {
+      font-size: 1.8rem;
+      color: #666666;
+      font-weight: 300;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .hero-section p {
+      color: #999999;
+    }
+
+    .content-page {
+      padding: 4rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .content-page h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .placeholder-text {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #999999;
+      padding: 3rem;
+    }
+
+    .reel-section {
+      margin-bottom: 4rem;
+    }
+
+    .reel-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: #000000;
+    }
+
+    body.dark-mode .reel-title {
+      color: #f5f5f5;
+    }
+
+    .animation-section {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    body.dark-mode .section-title {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-description {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666666;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+
+    body.dark-mode .section-description {
+      color: #999999;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      padding-bottom: 75%;
+      position: relative;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-placeholder {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .gallery-placeholder span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .gallery-item:nth-child(1) .gallery-placeholder {
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    }
+
+    .gallery-item:nth-child(2) .gallery-placeholder {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .gallery-item:nth-child(3) .gallery-placeholder {
+      background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);
+    }
+
+    .gallery-item:nth-child(4) .gallery-placeholder {
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .gallery-item:nth-child(5) .gallery-placeholder {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+
+    .gallery-item:nth-child(6) .gallery-placeholder {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    }
+
+    .gallery-item:nth-child(7) .gallery-placeholder {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .gallery-item:nth-child(8) .gallery-placeholder {
+      background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);
+    }
+
+    body.dark-mode .gallery-placeholder {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .gallery-item:hover .gallery-placeholder {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      border: 4px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf) border-box;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .video-container {
+      background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                  linear-gradient(135deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf) border-box;
+    }
+
+    .video-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 26px;
+    }
+
+    .about-intro {
+      max-width: 800px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .about-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666666;
+    }
+
+    body.dark-mode .about-intro p {
+      color: #999999;
+    }
+
+    .visual-intro {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .visual-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666666;
+    }
+
+    body.dark-mode .visual-intro p {
+      color: #999999;
+    }
+
+    .category-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+    }
+
+    .tab-btn {
+      padding: 0.8rem 1.8rem;
+      background: #f5f5f5;
+      border: 2px solid #e0e0e0;
+      border-radius: 25px;
+      color: #000000;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    body.dark-mode .tab-btn {
+      background: #1a1a1a;
+      border-color: #333333;
+      color: #f5f5f5;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+    }
+
+    body.dark-mode .tab-btn.active {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      box-shadow: 0 5px 20px rgba(255, 230, 109, 0.3);
+    }
+
+    .visual-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 1rem 0;
+    }
+
+    .visual-gallery-single {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0;
+    }
+
+    .visual-gallery-full {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 2rem 0;
+      width: 100%;
+    }
+
+    .visual-project {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.4s ease;
+      width: 100%;
+    }
+
+    .visual-project.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .project-card-wide {
+      background: #ffffff;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
+      border: 2px solid transparent;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .project-card-full {
+      background: #ffffff;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
+      border: 2px solid transparent;
+      width: 100%;
+    }
+
+    body.dark-mode .project-card {
+      background: #1a1a1a;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .project-card-wide {
+      background: #1a1a1a;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .project-card-full {
+      background: #1a1a1a;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:hover {
+      transform: translateY(-15px) rotate(2deg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: #4ecdc4;
+    }
+
+    .project-card-wide:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: #4ecdc4;
+    }
+
+    .project-card-full:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: #4ecdc4;
+    }
+
+    body.dark-mode .project-card:hover {
+      border-color: #ffe66d;
+    }
+
+    body.dark-mode .project-card-wide:hover {
+      border-color: #ffe66d;
+    }
+
+    body.dark-mode .project-card-full:hover {
+      border-color: #ffe66d;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image-wide {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image-full {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image::before {
+      content: '';
+      position: absolute;
+      font-size: 4rem;
+      opacity: 0.3;
+      transition: all 0.4s ease;
+    }
+
+    .project-image-wide::before {
+      content: '';
+      position: absolute;
+      font-size: 5rem;
+      opacity: 0.3;
+      transition: all 0.4s ease;
+    }
+
+    .project-image-full::before {
+      content: '';
+      position: absolute;
+      font-size: 6rem;
+      opacity: 0.3;
+      transition: all 0.4s ease;
+    }
+
+    .project-card:hover .project-image::before {
+      transform: scale(1.3) rotate(15deg);
+      opacity: 0.5;
+    }
+
+    .project-card-wide:hover .project-image-wide::before {
+      transform: scale(1.3) rotate(15deg);
+      opacity: 0.5;
+    }
+
+    .project-card-full:hover .project-image-full::before {
+      transform: scale(1.3) rotate(15deg);
+      opacity: 0.5;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .project-info h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #000000;
+      letter-spacing: 0.5px;
+    }
+
+    body.dark-mode .project-info h3 {
+      color: #f5f5f5;
+    }
+
+    .project-info p {
+      font-size: 0.95rem;
+      color: #666666;
+      font-weight: 400;
+    }
+
+    body.dark-mode .project-info p {
+      color: #999999;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #ff6b6b 0%, #4ecdc4 25%, #ffe66d 50%, #a8e6cf 75%, #ff6b6b 100%);
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    body.dark-mode .timeline::before {
+      background: linear-gradient(180deg, #ff6b6b 0%, #4ecdc4 25%, #ffe66d 50%, #a8e6cf 75%, #ff6b6b 100%);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 6rem;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .timeline-year {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      font-family: 'Katibeh', cursive;
+      letter-spacing: 2px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      border: 3px solid #ffffff;
+      z-index: 10;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .timeline-year {
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .timeline-item:nth-child(1) .timeline-year {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    }
+
+    .timeline-item:nth-child(2) .timeline-year {
+      background: linear-gradient(135deg, #4ecdc4, #44a8a0);
+    }
+
+    .timeline-item:nth-child(3) .timeline-year {
+      background: linear-gradient(135deg, #ffe66d, #f9ca24);
+    }
+
+    .timeline-item:nth-child(4) .timeline-year {
+      background: linear-gradient(135deg, #a8e6cf, #7ec8a3);
+    }
+
+    .timeline-item:nth-child(5) .timeline-year {
+      background: linear-gradient(135deg, #ffa07a, #ff8c69);
+    }
+
+    .timeline-item:nth-child(6) .timeline-year {
+      background: linear-gradient(135deg, #b19cd9, #9b7ec4);
+    }
+
+    .timeline-year:hover {
+      transform: translateX(-50%) scale(1.1) rotate(-3deg);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-content {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 2px solid #e0e0e0;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+    }
+
+    body.dark-mode .timeline-content {
+      background: #1a1a1a;
+      border-color: #333333;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-10px) rotate(1deg);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+      border-color: #4ecdc4;
+    }
+
+    body.dark-mode .timeline-content:hover {
+      border-color: #ffe66d;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #000000;
+    }
+
+    body.dark-mode .timeline-content h3 {
+      color: #f5f5f5;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #666666;
+    }
+
+    body.dark-mode .timeline-content p {
+      color: #999999;
+    }
+
+    .thesis-link {
+      color: #4ecdc4;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid #4ecdc4;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-image {
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      border: none;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-image::before {
+      content: '';
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.3;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .timeline-image {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .timeline-image:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .timeline-image:hover::before {
+      transform: translate(-50%, -50%) scale(1.2) rotate(10deg);
+      opacity: 0.5;
+    }
+
+    .timeline-item:nth-child(2) .timeline-image {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .timeline-item:nth-child(3) .timeline-image {
+      background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);
+    }
+
+    .timeline-item:nth-child(4) .timeline-image {
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .timeline-item:nth-child(5) .timeline-image {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+
+    .timeline-item:nth-child(6) .timeline-image {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-image {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .timeline-item:nth-child(even) .timeline-image {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .contact-page {
+      max-width: 800px;
+    }
+
+    .thesis-intro {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .thesis-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #666666;
+    }
+
+    body.dark-mode .thesis-intro p {
+      color: #999999;
+    }
+
+    .thesis-section {
+      margin-bottom: 5rem;
+    }
+
+    .thesis-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .thesis-phase {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      color: #ffffff;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 1rem;
+    }
+
+    body.dark-mode .thesis-phase {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+    }
+
+    .thesis-section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin: 1rem 0;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    body.dark-mode .thesis-section-title {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .thesis-section-desc {
+      font-size: 1.1rem;
+      color: #666666;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    body.dark-mode .thesis-section-desc {
+      color: #999999;
+    }
+
+    .thesis-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    .thesis-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .thesis-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .thesis-placeholder {
+      width: 100%;
+      padding-bottom: 75%;
+      position: relative;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .thesis-item:hover .thesis-placeholder {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .thesis-placeholder span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      z-index: 2;
+    }
+
+    body.dark-mode .thesis-placeholder {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .thesis-item:hover .thesis-placeholder {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .thesis-divider {
+      text-align: center;
+      margin: 6rem 0 4rem;
+      position: relative;
+    }
+
+    .thesis-divider span {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    body.dark-mode .thesis-divider span {
+      background: linear-gradient(135deg, #a8e6cf 0%, #ffd3a5 100%);
+      box-shadow: 0 8px 25px rgba(168, 230, 207, 0.3);
+    }
+
+    .thesis-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+    }
+
+    body.dark-mode .thesis-divider::before {
+      background: linear-gradient(90deg, transparent, #333333, transparent);
+    }
+
+    .contact-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666666;
+      margin-bottom: 3rem;
+    }
+
+    body.dark-mode .contact-subtitle {
+      color: #999999;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      border: none;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      position: relative;
+    }
+
+    body.dark-mode .social-btn {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      box-shadow: 0 6px 20px rgba(255, 230, 109, 0.4);
+    }
+
+    .social-btn svg {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+    }
+
+    .social-btn:hover {
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    }
+
+    body.dark-mode .social-btn:hover {
+      box-shadow: 0 8px 25px rgba(255, 230, 109, 0.5);
+    }
+
+    .social-btn:nth-child(1) {
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    }
+
+    body.dark-mode .social-btn:nth-child(1) {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+    }
+
+    .social-btn:nth-child(2) {
+      background: linear-gradient(135deg, #4ecdc4, #ffe66d);
+    }
+
+    body.dark-mode .social-btn:nth-child(2) {
+      background: linear-gradient(135deg, #a8e6cf, #ffa07a);
+    }
+
+    .social-btn:nth-child(3) {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+    }
+
+    body.dark-mode .social-btn:nth-child(3) {
+      background: linear-gradient(135deg, #ffa07a, #ff6b6b);
+    }
+
+    .social-btn:nth-child(4) {
+      background: linear-gradient(135deg, #a8e6cf, #ffa07a);
+    }
+
+    body.dark-mode .social-btn:nth-child(4) {
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 15px;
+      background: #ffffff;
+      color: #000000;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .form-group input,
+    body.dark-mode .form-group textarea {
+      background: #1a1a1a;
+      color: #f5f5f5;
+      border-color: #333333;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #4ecdc4;
+      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+    }
+
+    body.dark-mode .form-group input:focus,
+    body.dark-mode .form-group textarea:focus {
+      border-color: #ffe66d;
+      box-shadow: 0 0 0 3px rgba(255, 230, 109, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-btn {
+      padding: 1.2rem 3rem;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      color: #ffffff;
+      border: 2px solid transparent;
+      border-radius: 30px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    }
+
+    body.dark-mode .submit-btn {
+      background: linear-gradient(135deg, #a8e6cf, #ffe66d);
+      box-shadow: 0 4px 15px rgba(168, 230, 207, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    }
+
+    body.dark-mode .submit-btn:hover {
+      box-shadow: 0 10px 30px rgba(168, 230, 207, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .form-message {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      display: none;
+    }
+
+    .form-message.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+
+    .form-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffe66d, #ffa07a);
+      border: 3px solid #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(255, 230, 109, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+      background: linear-gradient(135deg, #4ecdc4, #b19cd9);
+      border-color: #ffffff;
+      box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+    }
+
+    .dark-mode-toggle:hover {
+      transform: scale(1.15) rotate(15deg);
+      box-shadow: 0 8px 25px rgba(255, 230, 109, 0.5);
+    }
+
+    body.dark-mode .dark-mode-toggle:hover {
+      box-shadow: 0 8px 25px rgba(78, 205, 196, 0.5);
+    }
+
+    .sun-icon, .moon-icon {
+      width: 28px;
+      height: 28px;
+      transition: opacity 0.3s ease;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+
+    .sun-icon {
+      opacity: 1;
+    }
+
+    body.dark-mode .sun-icon {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .moon-icon {
+      opacity: 0;
+      position: absolute;
+    }
+
+    body.dark-mode .moon-icon {
+      opacity: 1;
+    }
+
+    .language-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 6rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      border: 3px solid #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    body.dark-mode .language-toggle {
+      background: linear-gradient(135deg, #a8e6cf, #ffe66d);
+      box-shadow: 0 6px 20px rgba(168, 230, 207, 0.4);
+    }
+
+    .language-toggle:hover {
+      transform: scale(1.15) rotate(-5deg);
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    }
+
+    body.dark-mode .language-toggle:hover {
+      box-shadow: 0 8px 25px rgba(168, 230, 207, 0.5);
+    }
+
+    .project-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 2000;
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .project-modal.active {
+      display: block;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 1400px;
+      margin: 3rem auto;
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .modal-content {
+      background: #1a1a1a;
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 1rem;
+      left: calc(100% - 3rem);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      border: none;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    body.dark-mode .modal-close {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+    }
+
+    .modal-close:hover {
+      transform: scale(1.1) rotate(90deg);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .modal-title {
+      font-size: 3rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    body.dark-mode .modal-title {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .modal-subtitle {
+      font-size: 1.2rem;
+      color: #666666;
+    }
+
+    body.dark-mode .modal-subtitle {
+      color: #999999;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .modal-gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #f5f5f5;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .modal-gallery-item {
+      background: #2a2a2a;
+    }
+
+    .modal-gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-image-placeholder {
+      width: 100%;
+      padding-bottom: 75%;
+      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .modal-image-placeholder span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .modal-gallery-item:nth-child(2n) .modal-image-placeholder {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    }
+
+    .modal-gallery-item:nth-child(3n) .modal-image-placeholder {
+      background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);
+    }
+
+    .modal-gallery-item:nth-child(4n) .modal-image-placeholder {
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .modal-gallery-item:nth-child(5n) .modal-image-placeholder {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+
+    .modal-section {
+      margin-bottom: 5rem;
+      padding-bottom: 3rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    body.dark-mode .modal-section {
+      border-bottom-color: #333333;
+    }
+
+    .modal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .modal-section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .modal-section-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    body.dark-mode .modal-section-number {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+    }
+
+    .modal-section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 1rem 0 0.5rem;
+    }
+
+    body.dark-mode .modal-section-title {
+      background: linear-gradient(135deg, #ffe66d, #a8e6cf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .modal-section-subtitle {
+      font-size: 1.1rem;
+      color: #666666;
+      font-style: italic;
+    }
+
+    body.dark-mode .modal-section-subtitle {
+      color: #999999;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+
+      .hero-section p {
+        font-size: 1.3rem;
+      }
+
+      .content-page {
+        padding: 2rem 1rem;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+
+      .timeline-year {
+        position: static;
+        transform: none;
+        font-size: 1.5rem;
+        align-self: flex-start;
+      }
+
+      .timeline-content {
+        order: 2;
+      }
+
+      .timeline-image {
+        order: 3;
+        height: 200px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(odd) .timeline-image,
+      .timeline-item:nth-child(even) .timeline-image {
+        grid-column: initial;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .visual-gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-card-wide {
+        max-width: 100%;
+      }
+
+      .project-card-full {
+        width: 100%;
+      }
+
+      .project-image-wide {
+        height: 250px;
+        font-size: 1.1rem;
+      }
+
+      .project-image-full {
+        height: 300px;
+        font-size: 1.2rem;
+      }
+
+      .project-image-wide::before {
+        font-size: 3.5rem;
+      }
+
+      .project-image-full::before {
+        font-size: 4rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .category-tabs {
+        gap: 0.8rem;
+      }
+
+      .tab-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+      }
+
+      .language-toggle {
+        right: 5.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+      }
+
+      .dark-mode-toggle {
+        width: 50px;
+        height: 50px;
+      }
+
+      .thesis-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .thesis-section-title {
+        font-size: 2rem;
+      }
+
+      .thesis-divider span {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+      }
+
+      .modal-content {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+      }
+
+      .modal-close {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+      }
+
+      .modal-title {
+        font-size: 2rem;
+      }
+
+      .modal-subtitle {
+        font-size: 1rem;
+      }
+
+      .modal-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .modal-section-title {
+        font-size: 1.8rem;
+      }
+
+      .modal-section-subtitle {
+        font-size: 1rem;
+      }
+
+      .modal-section-number {
+        font-size: 0.9rem;
+        padding: 0.4rem 1.2rem;
+      }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="portfolio-container">
+   <header>
+    <div class="logo" id="logo">
+     CARLA ESCRIG DURÁN
+    </div>
+    <nav>
+     <ul id="navList">
+      <li><a href="#home" class="nav-link active" data-i18n="nav0">HOME</a></li>
+      <li><a href="#about" class="nav-link" data-i18n="nav1">ABOUT ME</a></li>
+      <li><a href="#thesis" class="nav-link" data-i18n="nav5">THESIS WORK</a></li>
+      <li><a href="#animation" class="nav-link" data-i18n="nav2">3D ANIMATION</a></li>
+      <li><a href="#visual" class="nav-link" data-i18n="nav3">VISUAL DEVELOPMENT</a></li>
+      <li><a href="#storyboard" class="nav-link" data-i18n="nav4">STORYBOARD</a></li>
+      <li><a href="#personal" class="nav-link" data-i18n="nav6">PERSONAL WORK</a></li>
+      <li><a href="#contact" class="nav-link" data-i18n="nav7">CONTACT</a></li>
+     </ul>
+    </nav>
+   </header>
+   <main>
+    <div id="home" class="page active">
+     <div class="hero-section">
+      <h1 id="hero-name">CARLA ESCRIG DURÁN</h1>
+      <p id="hero-tagline" data-i18n="tagline">3D Animator &amp; Concept artist</p>
+     </div>
+    </div>
+    <div id="about" class="page">
+     <div class="content-page">
+      <h2 data-i18n="aboutTitle">ABOUT ME</h2>
+      <div class="about-intro">
+       <p data-i18n="aboutIntro">Passionate about animation since my childhood and dreaming of working in it one day. I am becoming a professional 3D animator and Visual Development artist. I am a hardworking person and I give my 100% to any project I work on, therefore, I am capable of carrying out the work assigned to me.</p>
+      </div>
+      <div class="timeline" id="timeline">
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2002
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline0Title">The Beginning</h3>
+         <p data-i18n="timeline0Text">I was born on the 24th of June in 2002, in Barcelona, Spain. I was a naturally curious child and was fascinated by art at a very young age.</p>
+        </div>
+        <div class="timeline-image">
+         <span>🌟 Barcelona</span>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2010
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline1Title">First Steps in Art</h3>
+         <p data-i18n="timeline1Text">I started exploring drawing and painting. Like all children, I was mesmerized by animated films, and I spent my days drawing princesses, dragons, mermaids, etc.</p>
+        </div>
+        <div class="timeline-image">
+         <img src="https://i.imgur.com/kLgmryw.jpeg" alt="2010 First Steps in Art" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)';">
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2015
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline2Title">Diving into Animation</h3>
+         <p data-i18n="timeline2Text">At that time, I was a fresh teenager, and my personal interests started to flourish. This is when I began to educate myself about the Animation Industry. I knew from that point that I wanted to dedicate my life to this.</p>
+        </div>
+        <div class="timeline-image">
+         <img src="https://i.imgur.com/cD0OziP.jpeg" alt="2015 Diving into Animation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)';">
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2021
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline3Title">Professional Development</h3>
+         <p data-i18n="timeline3Text">My first year of college! I was so excited and grateful to be able to study what I had always wanted. I completed the 3D Animation &amp; VFX degree at LaSalle URL. I met amazing colleagues and teachers, and I made super talented friends that we catch up with to this day! Truly, the best years of my life.</p>
+        </div>
+        <div class="timeline-image">
+         <img src="https://i.imgur.com/SF9hTGm.png" alt="2021 College" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)';">
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2023
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline4Title">Thesis &amp; Specialization</h3>
+         <p data-i18n="timeline4Text">This year, we started working on our thesis project, where I collaborated on character designs, backgrounds, props, storyboards, animatics, texturing, visual effects, and my favorite, 3D animation! It was hard but so fulfilling in the end. You can see more at <a href="#thesis" class="thesis-link" data-i18n-link="thesisLink">Thesis Work</a>.</p>
+        </div>
+        <div class="timeline-image">
+         <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" autoplay loop muted playsinline>
+          <source src="https://i.imgur.com/8qouTnI.mp4" type="video/mp4"> Your browser does not support the video tag.
+         </video>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-year">
+         2025
+        </div>
+        <div class="timeline-content">
+         <h3 data-i18n="timeline5Title">Looking Forward</h3>
+         <p data-i18n="timeline5Text">Between 2024 and 2025, I completed a Master's in 3D Animation for Characters that taught me new things and further developed what I had previously studied in college. Now, I'm looking forward to making my first appearance in the animation industry, and I'm so ready to start my journey!</p>
+        </div>
+        <div class="timeline-image">
+         <img src="https://i.imgur.com/zuambkj.png" alt="2025 Journey" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)';">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="thesis" class="page">
+     <div class="content-page">
+      <h2 data-i18n="thesisTitle">THESIS WORK</h2>
+      <div class="thesis-intro">
+       <p data-i18n="thesisIntro">My thesis project was a collaborative journey through the complete animation pipeline. From initial concept sketches to final compositing, I contributed across multiple departments to bring our story to life. Below you can explore my work organized by production phase.</p>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase" data-i18n="finalResult">FINAL RESULT</span>
+        <h3 class="thesis-section-title" data-i18n="finalVideoTitle">Complete Short Film</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="finalVideoDesc">The culmination of our team's hard work - watch the final animated short film.</p>
+       <div class="video-container">
+        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.2rem; font-weight: 600; z-index: 2;">Final Video</span>
+       </div>
+      </div>
+      <div class="thesis-divider">
+       <span data-i18n="preProduction">PRE-PRODUCTION</span>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 1</span>
+        <h3 class="thesis-section-title" data-i18n="conceptArtTitle">Concept Art</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="conceptArtDesc">Character designs, environment concepts, and visual development exploring the look and feel of our story world.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+          <span>Character Design 1</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Character Design 2</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Environment Concept</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Props Design</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Color Keys</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Mood Board</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 2</span>
+        <h3 class="thesis-section-title" data-i18n="storyboardTitle2">Storyboard</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="storyboardDesc">Visualizing the narrative flow - key moments and compositions that define our story beats.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Opening Scene</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+          <span>Character Introduction</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Key Action Beat</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Emotional Moment</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Climax</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Resolution</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="thesis-divider">
+       <span data-i18n="production">PRODUCTION</span>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 3</span>
+        <h3 class="thesis-section-title" data-i18n="animaticTitle">Animatic</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="animaticDesc">Bringing the storyboard to life with timing, pacing, and rough audio to establish the rhythm of our film.</p>
+       <div class="video-container">
+        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.2rem; font-weight: 600; z-index: 2;">Animatic Video</span>
+       </div>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 4</span>
+        <h3 class="thesis-section-title" data-i18n="layoutTitle">Layout</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="layoutDesc">3D scene composition and camera work - establishing the staging and cinematography for each shot.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Shot Layout 1</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Shot Layout 2</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+          <span>Shot Layout 3</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Camera Angle Study</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 5</span>
+        <h3 class="thesis-section-title" data-i18n="animation3DTitle">3D Animation</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="animation3DDesc">Character performance and movement - bringing emotion and life to every shot through animation.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Character Animation 1</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Character Animation 2</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Action Sequence</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Facial Animation</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Full Body Performance</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+          <span>Secondary Animation</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="thesis-divider">
+       <span data-i18n="postProduction">POST-PRODUCTION</span>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 6</span>
+        <h3 class="thesis-section-title" data-i18n="vfxTitle">Visual Effects</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="vfxDesc">Adding magic and atmosphere - particle systems, simulations, and effects that enhance the story.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Particle Effects</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Lighting Effects</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Atmospheric FX</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Simulation Work</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="thesis-section">
+       <div class="thesis-header">
+        <span class="thesis-phase">PHASE 7</span>
+        <h3 class="thesis-section-title" data-i18n="graphicDesignTitle">Graphic Design</h3>
+       </div>
+       <p class="thesis-section-desc" data-i18n="graphicDesignDesc">Marketing and promotional materials - posters, titles, and branding that represent our project.</p>
+       <div class="thesis-gallery">
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Movie Poster</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Title Sequence</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+          <span>End Credits</span>
+         </div>
+        </div>
+        <div class="thesis-item">
+         <div class="thesis-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Promotional Material</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="animation" class="page">
+     <div class="content-page">
+      <h2 data-i18n="animationTitle">3D ANIMATION</h2>
+      <div class="reel-section">
+       <h3 class="reel-title" data-i18n="reelTitle">Animation Reel</h3><a href="https://vimeo.com/1144153174?fl=ip&amp;fe=ec" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block;">
+        <div class="video-container" style="cursor: pointer; background: linear-gradient(135deg, #ff6b6b, #4ecdc4);">
+         <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 1.2rem; font-weight: 600; z-index: 2;">Animation Reel</span>
+        </div></a>
+      </div>
+      <div class="animation-section">
+       <h3 class="section-title" data-i18n="steppedTitle">STEPPED</h3>
+       <p class="section-description" data-i18n="steppedDesc">Blocking phase - establishing key poses and timing foundations</p>
+       <div class="gallery-grid">
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 1</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 2</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 3</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 4</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 5</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 6</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 7</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 8</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="animation-section">
+       <h3 class="section-title" data-i18n="splineTitle">SPLINE</h3>
+       <p class="section-description" data-i18n="splineDesc">In-betweening phase - refining motion curves and transitions</p>
+       <div class="gallery-grid">
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 1</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 2</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 3</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 4</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 5</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 6</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 7</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 8</span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="animation-section">
+       <h3 class="section-title" data-i18n="polishTitle">POLISH</h3>
+       <p class="section-description" data-i18n="polishDesc">Final polish - adding details, secondary motion, and final touches</p>
+       <div class="gallery-grid">
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 1</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 2</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 3</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 4</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 5</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 6</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 7</span>
+         </div>
+        </div>
+        <div class="gallery-item">
+         <div class="gallery-placeholder">
+          <span>Animation 8</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="visual" class="page">
+     <div class="content-page">
+      <h2 data-i18n="visualTitle">VISUAL DEVELOPMENT</h2>
+      <div class="visual-intro">
+       <p data-i18n="visualIntro">Exploring worlds through color, form, and imagination. My visual development work spans character design, environment creation, and conceptual storytelling - bringing ideas to life from initial sketches to polished concepts.</p>
+      </div>
+      <div class="visual-gallery-full" id="visualGallery">
+       <div class="visual-project">
+        <div class="project-card-full" onclick="openModal('petMediumModal')" style="cursor: pointer;">
+         <div class="project-image-full">
+          <span>The Pet Medium</span>
+         </div>
+         <div class="project-info">
+          <h3>The Pet Medium</h3>
+          <p data-i18n="petMediumDesc">Visual Development Project</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="storyboard" class="page">
+     <div class="content-page">
+      <h2 data-i18n="storyboardTitle">STORYBOARD</h2>
+      <p class="placeholder-text" data-i18n="comingSoon">Content coming soon...</p>
+     </div>
+    </div>
+    <div id="personal" class="page">
+     <div class="content-page">
+      <h2 data-i18n="personalTitle">PERSONAL WORK</h2>
+      <div class="visual-intro">
+       <p data-i18n="personalIntro">Personal projects that fuel my creativity and passion for storytelling through visual art.</p>
+      </div>
+      <div class="visual-gallery-full" id="personalGallery">
+       <div class="visual-project">
+        <div class="project-card-full" onclick="openModal('merceModal')" style="cursor: pointer;">
+         <div class="project-image-full" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa07a 100%);">
+          <span>Mercè: Barcelona Màgica</span>
+         </div>
+         <div class="project-info">
+          <h3>Mercè: Barcelona Màgica</h3>
+          <p data-i18n="merceDesc">Personal Visual Development Project</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="contact" class="page">
+     <div class="content-page contact-page">
+      <h2 data-i18n="contactTitle">Get in touch!</h2>
+      <p class="contact-subtitle" data-i18n="contactSubtitle">Follow my work and stay updated on my latest projects.</p>
+      <div class="social-buttons">
+       <a href="https://www.instagram.com/carla.escrigduran/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+        <svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect> <circle cx="12" cy="12" r="4"></circle> <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg></a> <a href="https://carlaescrigduran.artstation.com/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="ArtStation">
+        <svg width="28" height="28" viewbox="0 0 24 24" fill="currentColor">
+         <path d="M2 17l4 4h12l4-4-10-15L2 17z" />
+        </svg></a> <a href="https://www.linkedin.com/in/carlaescrig" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+        <svg width="28" height="28" viewbox="0 0 24 24" fill="currentColor">
+         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+        </svg></a> <a href="https://www.youtube.com/@CarlaEscrig" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">
+        <svg width="28" height="28" viewbox="0 0 24 24" fill="currentColor">
+         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+        </svg></a>
+      </div>
+      <form class="contact-form" id="contactForm">
+       <div class="form-group">
+        <label for="name" data-i18n="formName">Name</label> <input type="text" id="name" name="name" required>
+       </div>
+       <div class="form-group">
+        <label for="email" data-i18n="formEmail">Email</label> <input type="email" id="email" name="email" required>
+       </div>
+       <div class="form-group">
+        <label for="message" data-i18n="formMessage">Message</label> <textarea id="message" name="message" rows="6" required></textarea>
+       </div><button type="submit" class="submit-btn" data-i18n="formSubmit">Send me a message!</button>
+      </form>
+      <div class="form-message" id="formMessage"></div>
+     </div>
+    </div>
+   </main><!-- Project Modals -->
+   <div class="project-modal" id="petMediumModal">
+    <div class="modal-content">
+     <button class="modal-close" onclick="closeModal('petMediumModal')">✕</button>
+     <div class="modal-header">
+      <h2 class="modal-title">The Pet Medium</h2>
+      <p class="modal-subtitle">Visual Development Project - Full Production Journey</p>
+     </div><!-- Sección 1: Introducción del Proyecto -->
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">01</span>
+       <h3 class="modal-section-title">The Brief</h3>
+       <p class="modal-section-subtitle">Introducción del Proyecto</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Project Brief</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+         <span>Story Synopsis</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Mood Board</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Sección 2: Diseño de Personaje -->
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">02</span>
+       <h3 class="modal-section-title">Character Exploration</h3>
+       <p class="modal-section-subtitle">Diseño de Personaje</p>
+      </div><!-- Subsección: Protagonista -->
+      <div style="margin-bottom: 4rem;">
+       <h4 style="font-size: 1.8rem; font-weight: 600; text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">El Protagonista</h4>
+       <div class="modal-gallery">
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Character Sketches</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Character Variations</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Expression Sheet</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Character Turnaround</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Color Schemes</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+          <span>Final Design</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Subsección: Amigo del Protagonista -->
+      <div style="margin-bottom: 4rem;">
+       <h4 style="font-size: 1.8rem; font-weight: 600; text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, #ffe66d, #a8e6cf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">El Amigo del Protagonista</h4>
+       <div class="modal-gallery">
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Friend Sketches</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Friend Variations</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Expression Sheet</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+          <span>Character Turnaround</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+          <span>Color Schemes</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <span>Final Design</span>
+         </div>
+        </div>
+       </div>
+      </div><!-- Subsección: Personajes Secundarios -->
+      <div>
+       <h4 style="font-size: 1.8rem; font-weight: 600; text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, #ffa07a, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Personajes Secundarios</h4>
+       <div class="modal-gallery">
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+          <span>Supporting Cast 1</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+          <span>Supporting Cast 2</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+          <span>Supporting Cast 3</span>
+         </div>
+        </div>
+        <div class="modal-gallery-item">
+         <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+          <span>Supporting Cast 4</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div><!-- Sección 2.5: Diseño de Props -->
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">02.5</span>
+       <h3 class="modal-section-title">Props &amp; Vehicles</h3>
+       <p class="modal-section-subtitle">Diseño de Objetos y Vehículos</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Vehicle Design</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Props Collection</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+         <span>Object Details</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+         <span>Asset Library</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Sección 3: Lenguaje Visual de los Espíritus -->
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">03</span>
+       <h3 class="modal-section-title">Visual Language</h3>
+       <p class="modal-section-subtitle">El Lenguaje Visual de los Espíritus</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+         <span>Spirit Concept Art</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Visual Effects</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+         <span>Spirit Forms</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Ethereal Elements</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Spirit Interactions</span>
+        </div>
+       </div>
+      </div>
+     </div><!-- Sección 4: Diseño de Entorno e Iluminación -->
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">04</span>
+       <h3 class="modal-section-title">Environment &amp; Lighting</h3>
+       <p class="modal-section-subtitle">Diseño de Entorno e Iluminación</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+         <span>Environment Concept</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+         <span>Background Design</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+         <span>Lighting Studies</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Time of Day</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+         <span>Atmospheric Effects</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Final Composition</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- Mercè: Barcelona Màgica Modal -->
+   <div class="project-modal" id="merceModal">
+    <div class="modal-content">
+     <button class="modal-close" onclick="closeModal('merceModal')">✕</button>
+     <div class="modal-header">
+      <h2 class="modal-title">Mercè: Barcelona Màgica</h2>
+      <p class="modal-subtitle">Personal Visual Development Project - Celebrating Barcelona's Magic</p>
+     </div>
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">01</span>
+       <h3 class="modal-section-title">Inspiration</h3>
+       <p class="modal-section-subtitle">The Festival &amp; The City</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa07a 100%);">
+         <span>La Mercè Festival</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+         <span>Barcelona Streets</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Cultural References</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Mood Board</span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">02</span>
+       <h3 class="modal-section-title">Character Design</h3>
+       <p class="modal-section-subtitle">The People of the Celebration</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+         <span>Main Character</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+         <span>Festival Performers</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+         <span>Castellers</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Gegants i Capgrossos</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+         <span>Character Lineup</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Expression Sheets</span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">03</span>
+       <h3 class="modal-section-title">Environment Design</h3>
+       <p class="modal-section-subtitle">Barcelona's Iconic Locations</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Plaça Sant Jaume</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+         <span>La Rambla</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+         <span>Gothic Quarter</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+         <span>Barceloneta Beach</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Night Festival</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);">
+         <span>Fireworks Display</span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">04</span>
+       <h3 class="modal-section-title">Props &amp; Details</h3>
+       <p class="modal-section-subtitle">Festive Elements</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Correfoc Dragons</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Festival Props</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+         <span>Musical Instruments</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+         <span>Traditional Elements</span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="modal-section">
+      <div class="modal-section-header">
+       <span class="modal-section-number">05</span>
+       <h3 class="modal-section-title">Final Illustrations</h3>
+       <p class="modal-section-subtitle">Capturing the Magic</p>
+      </div>
+      <div class="modal-gallery">
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+         <span>Key Frame 1</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+         <span>Key Frame 2</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ffeaa7 0%, #ffccb3 100%);">
+         <span>Key Frame 3</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+         <span>Poster Design</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%);">
+         <span>Title Card</span>
+        </div>
+       </div>
+       <div class="modal-gallery-item">
+        <div class="modal-image-placeholder" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa07a 100%);">
+         <span>Final Artwork</span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+    <svg class="sun-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+     <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="moon-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg></button> <button class="language-toggle" id="languageToggle" aria-label="Cambiar idioma"> EN </button>
+  </div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
