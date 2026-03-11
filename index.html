@@ -1,7 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carla Escrig Durán - Portfolio</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<title>Carla Escrig Durán - Portfolio</title>
+  <div class="portfolio-container">
+    <header>
+      <div class="logo" onclick="showPage('home')">Carla Escrig Durán</div>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showPage('home', event)" class="nav-link active">Inicio</a></li>
+          <li><a href="#" onclick="showPage('proyectos', event)" class="nav-link">Proyectos</a></li>
+          <li><button id="theme-toggle" aria-label="Cambiar modo">🌓</button></li>
+        </ul>
+      </nav>
+    </header>
 
-<link href="https://fonts.googleapis.com/css2?family=Katibeh&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <main>
+      <!-- Inicio -->
+      <section id="home" class="page active">
+        <div class="hero-section">
+          <h1>Carla Escrig</h1>
+          <p>Creative Designer & Motion Artist</p>
+        </div>
+      </section>
+
+      <!-- Proyectos -->
+      <section id="proyectos" class="page">
+        <div class="content-page">
+          <h2 class="section-title">Mis Proyectos</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item item-1"><span>Proyecto 1</span></div>
+            <div class="gallery-item item-2"><span>Proyecto 2</span></div>
+            <div class="gallery-item item-3"><span>Proyecto 3</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
